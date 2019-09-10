@@ -15,7 +15,7 @@
 				type: 'POST',
 				success: function(res) {
 					console.log('服务器返回的消息: ', res);
-					window.location.href = '/';
+					// window.location.href = '/';
 				}
 			});
 		});

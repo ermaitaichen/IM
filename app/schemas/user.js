@@ -1,12 +1,12 @@
-const mongoose = requier('mongoose')
+const mongoose = require('mongoose')
 
 var UserSchema = new mongoose.Schema({
-	name: {
+	username: {
 		unique: true,
 		type: String
     },
 	userid: Number,
-	password: String
+	password: String,
 	meta: {
 		createAt: {
 			type: Date,
@@ -26,6 +26,7 @@ UserSchema.pre('save', function(next) {
 	else {
 		this.meta.updateAt = Date.now();
 	}
+	next();
 })
 
 module.exports = UserSchema;
